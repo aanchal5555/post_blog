@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Blog Post Form</title>
+</head>
+<body>
+    <div class="back">
+        <h3> <a href=" " class="back_btn">Back</a></h3>
+    </div>
+    <div class="container">
+        <h2>Create a New Blog Post</h2>
+        <form [formGroup]="formService.form" (submit)="onSubmit()" >
+            <input type="hidden" formControlName="_id" >
+
+            <label for="name">Name:</label>
+            <input formControlName="name" type="text" id="name" name="name" required>
+
+            <label for="title">Title:</label>
+            <input formControlName="title" type="text" id="title" name="title" required>
+
+            <label for="date">Date:</label>
+            <input formControlName="date" type="date" id="date" name="date" required>
+
+            <label for="content">Content:</label>
+            <textarea formControlName="content" id="content" name="content" required></textarea>
+
+            <label for="image">Select Image:</label>
+            <input type="file" (change)="onSelectImage($event)" id="image" name="image" accept="image/*">
+            <button type="submit">Submit</button>
+<img *ngIf="imagePreview" style="width: 80px; height: 80px;" [src]="imagePreview" alt="">
+        </form>
+    </div>
+</body>
+</html>

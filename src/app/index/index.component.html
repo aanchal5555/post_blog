@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Blogger</title>
+    <!-- Box-icon -->
+ 
+    <style>
+
+        .container1{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1550px;
+            height: 700px;
+            background: #f5f5f5;
+            box-shadow: 0 30px 50px #dbdbdb;
+        }
+        
+        .container1 .slide .item{
+            width: 1200px;
+            height:700px;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            border-radius: 20px;
+            box-shadow: 0 10px 10px #505050;
+            background-position: 50% 50%;
+            background-size: cover;
+            display: inline-block;
+            transition: 0.5s;
+        }
+        
+        .slide .item:nth-child(1),
+        .slide .item:nth-child(2){
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            border-radius: 0;
+            width: 100%;
+            height: 100%;
+        }    
+        
+        .slide .item:nth-child(3){
+            left: 50%;
+        }
+        .slide .item:nth-child(4){
+            left: calc(50% + 220px);
+        }
+        .slide .item:nth-child(5){
+            left: calc(50% + 440px);
+        }
+        
+        /* here n = 0, 1, 2, 3,... */
+        .slide .item:nth-child(n + 6){
+            left: calc(50% + 660px);
+            opacity: 0;
+        }  
+        .item .content{
+            position: absolute;
+            top: 50%;
+            left: 100px;
+            width: 300px;
+            text-align: left;
+            color: rgb(249, 249, 250);
+            transform: translate(0, -50%);
+            font-family: system-ui;
+            display: none;
+        }
+        .slide .item:nth-child(2) .content{
+            display: block;
+        }
+        .content .name{
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: bold;
+            opacity: 0;
+            animation: animate 1s ease-in-out 1 forwards;
+        }
+        .content .des{
+            margin-top: 10px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: animate 1s ease-in-out 0.3s 1 forwards;
+        }
+        @keyframes animate {
+            from{
+                opacity: 0;
+                transform: translate(0, 100px);
+                filter: blur(33px);
+            }
+        
+            to{
+                opacity: 1;
+                transform: translate(0);
+                filter: blur(0);
+            }
+        }
+        .button {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+        }
+        
+        .button button {
+            width: 40px;
+            height: 35px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+            border: 1px solid #000;
+            transition: 0.3s;
+        }
+        
+        .button button:hover {
+            background: #ababab;
+            color: #fff;
+        }
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <a href="#" class="logo">Blo<span>गिंग</span></a>       
+            <a href="login" class="login">Sign Up</a>
+        </div>
+       
+    </header> 
+
+  <div id="slider">
+    <ul id="slideWrap">
+        <li>
+            <img src="https://wallpaperaccess.com/full/1154341.jpg" alt="">
+            <div class="text-overlay">CreativeCrazeBlog</div>
+        </li>
+        <li>
+            <img src="https://images5.alphacoders.com/343/thumb-1920-343645.jpg" alt="">
+            <div class="text-overlay">रचनात्मक सनक ब्लॉग</div>
+        </li>
+        <li>
+            <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700291270.jpg" alt="">
+            <div class="text-overlay">સર્જનાત્મક ક્રેઝ બ્લોગ</div>
+        </li>
+        <li>
+            <img src="https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg" alt="">
+            <div class="text-overlay">کریتیوکرازیبلوگ</div>
+        </li>
+        <li>
+            <img src="https://images6.alphacoders.com/462/thumb-1920-462371.jpg" alt="">
+            <div class="text-overlay">ক্রিয়েটিভ ক্রেজব্লগ</div>
+        </li>
+    </ul>
+    <a id="prev" href="#">&#8810;</a>
+    <a id="next" href="#">&#8811;</a>
+</div>
+
+    
+
+    <section class="about container" id="about">
+        <div class="contentBx">
+            <h2 class="titleText">Catch up with the trending topics</h2>
+            <p class="title-text">
+                Welcome to our vibrant blogging platform! We are your go-to destination for insightful articles, captivating stories, and expert opinions on a wide range of topics. Dive into our diverse collection of content curated by passionate writers from around the globe. <br><br>Whether you're seeking inspiration, practical advice, or simply a good read, our platform has something for everyone. Join our community of avid readers and writers, share your thoughts in the comments section, and discover new perspectives. With fresh content updated regularly, there's always something new to explore on our dynamic blogging website.
+            </p>
+            <a href="about" class="btn2">Read more</a>
+        </div>
+        <div class="imgBx">
+            <img src="assets/images/about1.jpeg" alt="" class="fitBg" height="400" width="500">
+        </div>
+    </section>
+<section>
+    <div class="create">
+       <h3> <a href="create" class="create_post">Create Post</a>  </h3>
+       <h3> <a href="view" class="create_post">Recent View Post</a>  </h3>
+    </div>
+
+    <div class="post-filter container">
+        <span class="filter-item active-filter" data-filter="all">All</span>
+        <span class="filter-item" data-filter="food">Food</span>
+        <span class="filter-item" data-filter="tech">Tech</span>
+        <span class="filter-item" data-filter="news">News</span>
+    </div>
+    
+    <div class="post container">
+        <!-- Post 1 -->
+        <div class="post-box tech">
+            <img src="assets/images/img1.jpg" alt="" class="post-img">
+            <h2 class="category">Tech</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/Aaaaa.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Aanchal</span>
+            </div>
+        </div>
+        <!-- Post 2 -->
+        <div class="post-box food">
+            <img src="assets/images/healthy.jpg" alt="" class="post-img">
+            <h2 class="category">Tech</h2>
+            <a href="#" class="post-title">A List of Super Healthy Foods</a>
+            <span class="post-date">22 Oct 2023</span>
+            <p class="post-description">Many foods are both healthy and tasty. By filling your plate with fruits, vegetables, quality protein sources, and other whole foods, you’ll have meals that are colorful, versatile, and good for you.</p>
+            <div class="profile">
+                <img src="assets/images/Tannu.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Tannu</span>
+            </div>
+        </div>
+        <!-- Post 3 -->
+        <div class="post-box food">
+            <img src="assets/images/food3.jpg" alt="" class="post-img">
+            <h2 class="category">Food</h2>
+            <a href="#" class="post-title">India's famous food</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/payal.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Payal</span>
+            </div>
+        </div>
+        <!-- Post 4 -->
+        <div class="post-box news">
+            <img src="assets/images/img4.jpg" alt="" class="post-img">
+            <h2 class="category">Tech</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/nishu.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Nishu</span>
+            </div>
+        </div>
+        <!-- Post 5 -->
+        <div class="post-box tech">
+            <img src="assets/images/img5.jpg" alt="" class="post-img">
+            <h2 class="category">Tech</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/Anjuu.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Anju</span>
+            </div>
+        </div>
+        <!-- Post 6 -->
+        <div class="post-box news">
+            <img src="assets/images/img4.jpg" alt="" class="post-img">
+            <h2 class="category">News</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/nikku.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Nikku</span>
+            </div>
+        </div>
+        <!-- Post 7 -->
+        <div class="post-box tech">
+            <img src="assets/images/img7.jpg" alt="" class="post-img">
+            <h2 class="category">Tech</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/nidhi1.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Nidhi</span>
+            </div>
+        </div>
+        <!-- Post 7 -->
+        <div class="post-box tech">
+            <img src="assets/images/img7.jpg" alt="" class="post-img">
+            <h2 class="category">Tech</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/nidhi1.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Nidhi</span>
+            </div>
+        </div>
+        <!-- Post 7 -->
+        <div class="post-box tech">
+            <img src="assets/images/img7.jpg" alt="" class="post-img">
+            <h2 class="category">Tech</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/nidhi1.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Nidhi</span>
+            </div>
+        </div>
+        <!-- Post 7 -->
+        <div class="post-box tech">
+            <img src="assets/images/img7.jpg" alt="" class="post-img">
+            <h2 class="category">Tech</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/nidhi1.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Nidhi</span>
+            </div>
+        </div>
+        <!-- Post 1 -->
+        <div class="post-box news">
+            <img src="assets/images/img8.jpg" alt="" class="post-img">
+            <h2 class="category">News</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/partima.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Partima</span>
+            </div>
+        </div>
+        <!-- Post 2 -->
+        <div class="post-box news">
+            <img src="assets/images/img8.jpg" alt="" class="post-img">
+            <h2 class="category">News</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/partima.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Partima</span>
+            </div>
+        </div>
+        <!-- Post 3 -->
+        <div class="post-box news">
+            <img src="assets/images/img8.jpg" alt="" class="post-img">
+            <h2 class="category">News</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/partima.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Partima</span>
+            </div>
+        </div>
+        <!-- Post 4 -->
+        <div class="post-box news">
+            <img src="assets/images/img8.jpg" alt="" class="post-img">
+            <h2 class="category">News</h2>
+            <a href="#" class="post-title">How to create the best UI with Figma</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, similique, rerum excepturi harum, vitae facilis corrupti vel modi debitis est perferendis aut quasi ea unde repudiandae iste architecto. Corporis, voluptates.</p>
+            <div class="profile">
+                <img src="assets/images/partima.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Partima</span>
+            </div>
+        </div>
+        <!-- Post 9 -->
+        <div class="post-box food">
+            <img src="assets/images/health.jpg" alt="" class="post-img">
+            <h2 class="category">Food</h2>
+            <a href="#" class="post-title">23 Heart-Healthy Foods and Nutrients Every Woman Should Add to Her Diet</a>
+            <span class="post-date">02 Dec 2023</span>
+            <p class="post-description">The heart beats about 2.5 billion times over the average lifetime, pushing millions of gallons of blood to every part of the body. This steady flow carries with it oxygen, fuel, hormones, other compounds, and a host of essential cells. It also whisks away the waste products of metabolism. When the heart stops, essential functions fail, some almost instantly.</p>
+            <div class="profile">
+                <img src="assets/images/muskan.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Muskan</span>
+            </div>
+        </div>
+        <!-- Post 10 -->
+        <div class="post-box food">
+            <img src="assets/images/sweet.jpg" alt="" class="post-img">
+            <h2 class="category">Food</h2>
+            <a href="#" class="post-title">Famous Indians Sweets</a>
+            <span class="post-date">12 Feb 2022</span>
+            <p class="post-description">Most Indians have a sweet tooth or a mouthful of them, to say the least. It’s not uncommon to see huge crowds at Sweet stores across the Country. </p>
+            <div class="profile">
+                <img src="assets/images/nidhi.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Nidhi</span>
+            </div>
+        </div>
+        <!-- Post 11 -->
+        <div class="post-box food">
+            <img src="assets/images/north.webp" alt="" class="post-img">
+            <h2 class="category">Food</h2>
+            <a href="#" class="post-title">10 Foods to Try While Traveling in North India</a>
+            <span class="post-date">05 Jan 2024</span>
+            <p class="post-description">"Every country, from around the globe, contains a fusion of food culture that is relative. So we all have something to share." </p>
+            <div class="profile">
+                <img src="assets/images/varsha.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Varsha</span>
+            </div>
+        </div>
+        <!-- Post 12 -->
+        <div class="post-box food">
+            <img src="assets/images/south.jpg" alt="" class="post-img">
+            <h2 class="category">Food</h2>
+            <a href="#" class="post-title">South Indian Food Culture in depth</a>
+            <span class="post-date">12 Feb 2023</span>
+            <p class="post-description">Over the last decade and a half, the Indian culinary landscape has seen some significant changes in terms of modernizing and improving it’s appeal to a global consumer. South Indian cuisine, however, has seen no such change. In fact, if you venture out of South India and ask any average North Indian what their five favourite South Indian dishes are, they will probably be hard- pressed to come up with five individual dishes.</p>
+            <div class="profile">
+                <img src="assets/images/khushboo.jpeg" alt="" class="profile-img">
+                <span class="profile-name">Khushboo</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-------------------------Review------------------>
+<section class="review" style="background-image: url('assets/images/create.jpg');">
+    <div class="container3">
+        <div class="container__left">
+            <h1>Read what our customers love about us</h1>
+            <p>
+                Over 200 companies from diverse sectors consult us to enhance the user experience of their products and services.
+            </p>
+            <p>
+                We have helped companies increase their customer base and generate multifold revenue with our service.
+            </p>
+            <button><a href="success" class="btn3">Read our success stories</a></button>
+        </div>
+        <div class="container__right">
+            <div class="card">
+                <img src="assets/images/review.jpeg" alt="user" />
+                <div class="card__content">
+                    <span><i class="ri-double-quotes-l"></i></span>
+                    <div class="card__details">
+                        <p>
+                            "Exceptional service! The Filament team exceeded my expectations, enhancing my blog's UX. Highly recommended for anyone seeking top-notch expertise and results-driven solutions.
+                        </p>
+                        <h4>- Sandhya</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/review1.jpeg" alt="user" />
+                <div class="card__content">
+                    <span><i class="ri-double-quotes-l"></i></span>
+                    <div class="card__details">
+                        <p>
+                            "We had a great experience working with Filament. They understood our needs perfectly and delivered excellent results. Highly recommended!"
+                        </p>
+                        <h4>- Varsha Sharma</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/images/review2.jpeg" alt="user" />
+                <div class="card__content">
+                    <span><i class="ri-double-quotes-l"></i></span>
+                    <div class="card__details">
+                        <p>
+                            I absolutely loved working with the Filament team. Complete experts at what they do!
+                        </p>
+                        <h4>- Vinita Rawat</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--------------------------------footer-------------------->
+    <footer>
+        <div class="footer-container">
+            <div class="sec aboutus">
+                <h2>About Us</h2>
+                <p>Whether you're seeking inspiration, practical advice, or simply a good read, our platform has something for everyone. Join our community of avid readers and writers, share your thoughts in the comments section, and discover new perspectives. With fresh content updated regularly, there's always something new to explore on our dynamic blogging website.</p>
+                <ul class="sci">
+                    <li><a href="https://www.facebook.com/kml.sharma.543"><i class="bx bxl-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/kmljeev_sharma30/"><i class="bx bxl-instagram"></i></a></li>
+                    <li><a href="https://twitter.com/AnchalK68223112"><i class="bx bxl-twitter"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/aanchal-kumari-29a40a252/"><i class="bx bxl-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="sec quicklinks">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="login">Sign Up</a></li>
+                    <li><a href="create">Create post</a></li>
+                    <li><a href="success">Read Success story</a></li>
+                </ul>
+            </div>
+            <div class="sec contactBx">
+                <h2>Contact Info</h2>
+                <ul class="info">
+                    <li>
+                        <span><i class='bx bxs-map'></i></span>
+                        <span>Block-D, Sector-1 <br> NSTI Noida,  UP</span>
+                    </li>
+                    <!-- <li>
+                        <span><i class='bx bx-envelope' ></i></span>
+                        <p><a href="mailto:aanchalrani5555@gmail.com">aanchalrani5555@gmail.com</a></p>
+                         <p><a href="mailto:mailkamal8996@gmail.com">aanchalrani5555@gmail.com</a></p>                      
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!--------------------------scroll---------------->
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>

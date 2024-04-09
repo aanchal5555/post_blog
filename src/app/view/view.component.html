@@ -1,0 +1,24 @@
+
+
+<div class="back">
+    <h3> <a href=" " class="back_btn">Back</a></h3>
+</div>
+    <div class="container">
+        <h2>View New Blog Post</h2>
+
+            <!-- Post 1 -->
+                 <div *ngFor="let post of posts" class="post-box">
+                <img [src]="post.image" alt="" class="post-img">
+                <h2 class="category">{{ post.category }}</h2>
+                <a href="#" class="post-title">{{ post.title }}</a>
+                <span class="post-date">{{ post.date }}</span>
+                <p class="post-description">{{ post.content }}</p>
+                <div class="profile">
+                    <!-- If you have profile images, display them here -->
+                    <!-- <img [src]="post.profileImage" alt="" class="profile-img"> -->
+                    <span class="profile-name">{{ post.name }}</span>
+                </div>
+            </div>
+
+        </div>
+        
